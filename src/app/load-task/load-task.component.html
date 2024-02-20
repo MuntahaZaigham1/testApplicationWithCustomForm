@@ -1,0 +1,18 @@
+<div>
+    <span>Navigate Through Routes</span>
+    <div *ngFor="let task of myTasks">
+      <button mat-raised-button [routerLink]="task.data[0].formKey">{{task.data[0].formKey}}</button>
+    </div>
+  </div>
+  
+  <div>
+    <span>Navigate Through Component Resolver</span>
+    <div *ngFor="let task of myTasks">
+      <button mat-raised-button (click)="openComponent(task)">{{task.data[0].formKey}}</button>
+    </div>
+  </div>
+  
+  <div style="padding: 20px; background-color: azure;">
+    <span>Dynamic Component Container</span>
+    <ng-container #dynamicComponentContainer></ng-container>
+  </div>
